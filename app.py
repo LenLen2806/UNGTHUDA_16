@@ -9,13 +9,13 @@ import json
 # Cấu hình Streamlit
 st.set_page_config(page_title="Chẩn đoán Ung thư Da", layout="wide", page_icon="🧬")
 
-# Load mô hình và ánh xạ lớp
+#Load mô hình và ánh xạ lớp
 model = tf.keras.models.load_model("ungthuda.h5")
 with open("class_indices.json", "r") as f:
     class_indices = json.load(f)
 index_to_class = {v: k for k, v in class_indices.items()}
 
-# Thông tin chi tiết về bệnh
+#Thông tin chi tiết về bệnh
 disease_info = {
     "akiec": {
         "ten_ta": "Actinic Keratoses",
